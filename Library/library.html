@@ -3,8 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Brooklyn Public Library</title>
 </head>
 <body>
+<div class="wrapper">
+  <header class="header">
+    <div class="container">
+      <h1>Brooklyn Public Library</h1>
+      <nav class="menu">
+        <ul class="nav__list">
+          <li class="nav__list-item"><a href="" class="nav__link">About</a></li>
+          <li class="nav__list-item"><a href="" class="nav__link">Favorites</a></li>
+          <li class="nav__list-item"><a href="" class="nav__link">Coffee shop</a></li>
+          <li class="nav__list-item"><a href="" class="nav__link">Contacts</a></li>
+          <li class="nav__list-item"><a href="" class="nav__link">Library Card</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="icon">
+        <img class="menu__icon" src="img/icon_profile.svg" alt="Profile icon">
+      </a>
+    </div>
+  </header>
+  <main class="main">
+    <section class="welcome">
+      <div class="container">
+        <div class="welcome__content-box">
+          <h2 class="main__title">Welcome to the Brooklyn Library</h2>
+        </div>
+      </div>
+    </section>
+    <section class="about">
+      <div class="container">
+        <h2>About</h2>
+        <div class="line"><hr></div>
+        <p>The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
+      </div>
+      <div class="gallery__about">
+        <img class="gallery__item" src="img/image 1.png" alt="Image1">
+        <img class="gallery__item" src="img/image 2.png" alt="Image2">
+        <img class="gallery__item" src="img/image 3.png" alt="Image3">
+      </div>
+      <div class="pagination">
+        <button class="pagination__btn"></button>
+        <button class="pagination__btn"></button>
+        <button class="pagination__btn"></button>
+      </div>
+    </section>
+    <section class="favorites">
+      <div class="container">
+        <h2>Favorites</h2>
+        <div class="line"><hr></div>
+        <span class="favorites__text">Pick favorites of season</span>
+        <div class="input">
+          <label class="radio__label"><input type="radio" name="winter">Winter</label>
+          <label class="radio__label"><input type="radio" name="winter">Spring</label>
+          <label class="radio__label"><input type="radio" name="winter">Summer</label>
+          <label class="radio__label"><input type="radio" name="winter">Autumn</label>
+        </div>
+        <div class="book__info">
+          <div class="section__winter">
+            <div class="section__winter-info">
+              <span class="sectiopn__label">Staff Picks</span>
+              <h3>The Book Eaters</h3>
+              <h4>By Sunyi Dean</h4>
+              <p class="book__description">
+                An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+              </p>
+              <button class="btn__buy">Buy</button>
+            </div>
+            <div class="section__winter-img">
+              <img src="img/book.png" alt="The Book Eaters" class="book__cover">
+            </div>
+          </div>
+          <div class="section__winter">
+            <div class="section__winter-info">
+              <span class="sectiopn__label">Staff Picks</span>
+              <h3>Cackle</h3>
+              <h4>By Rachel Harrison</h4>
+              <p class="book__description">
+                Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.
+              </p>
+              <button class="btn__buy">Buy</button>
+            </div>
+            <div class="section__winter-img">
+              <img src="img/book2.png" alt="Cackle" class="book__cover">
+            </div>
+          </div>
+          <div class="section__winter">
+            <div class="section__winter-info">
+              <span class="sectiopn__label">Staff Picks</span>
+            <h3>Dante: Poet of the Secular World</h3>
+            <h4>By Erich Auerbach</h4>
+            <p class="book__description">
+              Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.
+            </p>
+            <button class="btn__buy">Buy</button>
+            </div>
+            <div class="section__winter-img">
+              <img src="img/book3.png" alt="Dante: Poet of the Secular World" class="book__cover">
+            </div>
+          </div>
+          <div class="section__winter">
+            <div class="section__winter-info">
+              <span class="sectiopn__label">Staff Picks</span>
+            <h3>The Last Queen</h3>
+            <h4>By Clive Irving</h4>
+            <p class="book__description">
+              A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.
+            </p>
+            <button class="btn__own">Own</button>
+            </div>
+            <div class="section__winter-img">
+              <img src="img/book4.png" alt="The Last Queen" class="book__cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="coffeeshop">
+      <div class="container">
+        <h2>Coffee Shop</h2>
+        <div class="line"><hr></div>
+        <p class="coffeeshop__info">
+          In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. 
+          you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.
+        </p>
+        <div class="container__menu">
+          <div class="menu__left">
+            <h2 class="menu">Coffee & Tea</h2>
+            <ul class="menu__list">
+              <li class="menu__item"><p class="menu__item-name">Cold Brew Coffee</p><hr class="line-big"><p class="price">$3</p></li>
+              <li class="menu__item"><p class="menu__item-name">French Press Pot</p><hr class="line-big"><p class="price">$5</p></li>
+              <li class="menu__item"><p class="menu__item-name">Espresso</p><hr class="line-big"><p class="price">$2</p></li>
+              <li class="menu__item"><p class="menu__item-name">Cappuccino</p><hr class="line-big"><p class="price">$4</p></li>
+              <li class="menu__item"><p class="menu__item-name">Hot tea</p><hr class="line-big"><p class="price">$2</p></li>
+              <li class="menu__item"><p class="menu__item-name">Cold tea</p><hr class="line-big"><p class="price">$2</p></li>
+            </ul>
+          </div>
+          <div class="menu__right">
+            <h2 class="menu">Desserts & Cakes</h2>
+            <ul class="menu__list">
+              <li class="menu__item"><p class="menu__item-name">Forest Gateau</p><hr class="line-big"><p class="price">$16</p></li>
+              <li class="menu__item"><p class="menu__item-name">Blue Moon</p><hr class="line-big"><p class="price">$16</p></li>
+              <li class="menu__item"><p class="menu__item-name">Truffle Cake</p><hr class="line-big"><p class="price">$15</p></li>
+              <li class="menu__item"><p class="menu__item-name">Chocolate Cake</p><hr class="line-big"><p class="price">$18</p></li>
+              <li class="menu__item"><p class="menu__item-name">Poet’s Dream Cake</p><hr class="line-big"><p class="price">$16</p></li>
+              <li class="menu__item"><p class="menu__item-name">Pineapple Cake</p><hr class="line-big"><p class="price">$14</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contacts">
+      <div class="container">
+        <h2>Our Contacts</h2>
+        <div class="contacts__info">
+          <p class="contacts__info-main">For all Library inquiries:</p>
+          <p class="contacts__phone"><a href="tel.6177302370" class="phone">Please call (617) 730-2370</a></p>
+          <p class="contacts__phone"><a href="tel.6177302370" class="phone">For TTY service, please call (617) 730-2370</a></p>
+          <p class="contacts__phone"><a href="tel.6177302385" class="phone">Putterham Library: (617) 730-2385</a></p>
+          <p class="contacts__info-main">Senior Staff</p>
+          <p class="contacts__email">Library Director:<a href="mailto:AmandaHirst@gmail.com" class="email">Amanda Hirst</a></p>
+        </div>
+        <div class="contacts__map">
+          <img src="img/Map.png" alt="map">
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+  
+  </footer>
+</div>
 </body>
 </html>
