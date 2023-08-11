@@ -55,6 +55,31 @@ a{
 .icon{
   margin-left: 40px;
 }
+.header__burger{
+  width: 45px;
+  height: 20px;
+  position: relative;
+  display: none;
+  
+}
+.bar{
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #FFF;
+  left: 0;
+  position: absolute;
+}
+.bar-first{
+  top: 0;
+}
+.bar-third{
+  bottom: 0;
+}
+.bar-second{
+  top: 50%;
+  transform: translateY(-50%);
+}
 h1{
   color: #FFF;
   font-size: 30px;
@@ -128,6 +153,13 @@ h2{
   flex-direction: row;
   justify-content: space-between;
 }
+.gallery__item{
+  max-width: 100%;
+  height: auto;
+}
+.gallery__btn{
+  display: none;
+}
 .pagination__wrapper{
   margin-top: 35px;
   display: flex;
@@ -150,6 +182,9 @@ h2{
 .active{
   background-color: #BB945F;
   cursor: pointer;
+}
+.hide-btn{
+  display: none;
 }
 .favorites__text{
   color: #000;
@@ -541,7 +576,7 @@ h4{
 .footer__line{
   margin-top: 30px;
   margin-bottom: 34px;
-  width: 1400px;
+  max-width: 1400px;
   border: 1px #FFF solid;
 }
 .footer__inner-bottom{
@@ -556,4 +591,180 @@ h4{
 }
 .footer__info{
   text-align: end;
+}
+@media (max-width: 1395px){
+  .gallery__about{
+    gap: 10px;
+  }
+}
+@media (max-width: 1230px){
+  .book__info{
+    flex-direction: column;
+  }
+  .gallery_hide{
+    display: none;
+  }
+  .gallery__about{
+    display: flex;
+    text-align: center;
+  }
+  .pagination__wrapper{
+    margin-top: 25px;
+  }
+  .gallery__btn{
+    display: block;
+    background-color: #FFF;
+    border: none;
+    margin-top: 35px;
+  }
+  .left-btn{
+    margin-left: 57px;
+  }
+  .right-btn{
+    margin-right: 57px;
+  }
+  .hide-btn{
+    display: block;
+  }
+}
+@media (max-width: 1030px){
+  .header__burger{
+    display: block;
+  }
+  .menu{
+    position: fixed;
+    width: 332px;
+    height: 570px;
+    background-color: #000;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    transform: translateX(100%);
+    transition: 0.3s all linear;
+  }
+  .menu_active{
+    transform: translateX(0);
+  }
+  .container__flex-right{
+    flex-direction: row-reverse;
+  }
+  .icon{
+    margin-right: 41px;
+  }
+  .nav__list-item{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .nav__list-item:last-child{
+    margin-bottom: 0;
+  }
+  .nav__cross{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 31px;
+    right: 26px;
+    z-index: 5;
+  }
+  .nav__cross-line{
+    width: 100%;
+    display: block;
+    height: 2px;
+    background-color: #FFF;
+    position: absolute;
+    top: 50%;
+  }
+  .nav__cross-line:first-child{
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .nav__cross-line:last-child{
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+@media (max-width: 1010px){
+  .container__menu {
+    flex-direction: column;
+  }
+  .menu__right {
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+  }
+  .menu__left{
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+  }
+  .menu__l{
+    margin-top: 40px;
+  }
+  .contacts__wrap {
+    flex-direction: column;
+    gap: 100px;
+  }
+  .contacts__info,
+  .contacts__map {
+    width: 100%;
+  }
+  .contacts__map{
+    text-align: center;
+  }
+  .librarycard__wrapper{
+    flex-direction: column;
+    align-items: center;
+  }
+  .readercard{
+    text-align: center;
+  }
+  .card__title-right{
+    margin-top: 21px;
+  }
+  .card__info{
+    text-align: center;
+  }
+}
+@media  (max-width: 768px) {
+  .map-img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Adjust header styles */
+  /*.container__flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .menu {
+    margin-top: 20px;
+  }
+  
+ Adjust book section styles 
+  .book__info {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .section__winter,
+  .section__spring,
+  .section__summer,
+  .section__autumn {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Adjust coffee shop menu styles */
+  
+
+  /* Adjust contacts section styles */
+ 
+
+  /* Adjust library card section styles 
+  .librarycard__wrapper {
+    flex-direction: column;
+  }
+  .librarycard__input,
+  .readercard {
+    width: 100%;
+  }*/
 }
