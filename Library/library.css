@@ -609,13 +609,20 @@ h4{
     text-align: center;
   }
   .pagination__wrapper{
-    margin-top: 25px;
+    margin-top: 22px;
   }
   .gallery__btn{
     display: block;
     background-color: #FFF;
     border: none;
     margin-top: 35px;
+    cursor: pointer;
+  }
+  .gallery__btn svg path{
+    transition: stroke 0.3s ease;
+  }
+  .gallery__btn:hover svg path{
+    stroke: #BB945F;
   }
   .left-btn{
     margin-left: 57px;
@@ -640,7 +647,7 @@ h4{
     right: 0;
     z-index: 99;
     transform: translateX(100%);
-    transition: 0.3s all linear;
+    transition: 0.4s all linear;
   }
   .menu_active{
     transform: translateX(0);
@@ -731,7 +738,7 @@ h4{
     margin: 35px 0 46px;
   }
   .favorites__text{
-    margin: 27px 0 40px;
+    margin: 30px 0 42px;
   }
   .input{
     gap: 94px;
@@ -742,42 +749,4 @@ h4{
     max-width: 100%;
     height: auto;
   }
-
-  /* Adjust header styles */
-  /*.container__flex {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .menu {
-    margin-top: 20px;
-  }
-  
- Adjust book section styles 
-  .book__info {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .section__winter,
-  .section__spring,
-  .section__summer,
-  .section__autumn {
-    width: 100%;
-    padding: 20px;
-  }
-
-  /* Adjust coffee shop menu styles */
-  
-
-  /* Adjust contacts section styles */
- 
-
-  /* Adjust library card section styles 
-  .librarycard__wrapper {
-    flex-direction: column;
-  }
-  .librarycard__input,
-  .readercard {
-    width: 100%;
-  }*/
 }
