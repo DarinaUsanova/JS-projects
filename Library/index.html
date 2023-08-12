@@ -24,7 +24,16 @@
               <li class="nav__list-item"><a href="#contacts" class="nav__link">Contacts</a></li>
               <li class="nav__list-item"><a href="#librarycard" class="nav__link">Library Card</a></li>
             </ul>
+            <div class="nav__cross">
+              <span class="nav__cross-line"></span>
+              <span class="nav__cross-line"></span>
+            </div>
           </nav>
+          <div class="header__burger burger">
+            <span class="bar bar-first"></span>
+            <span class="bar bar-second"></span>
+            <span class="bar bar-third"></span>
+          </div>
           <a href="#" class="icon">
             <img class="menu__icon" src="img/icon_profile.svg" alt="Profile icon">
           </a>
@@ -46,14 +55,24 @@
         <hr class="line__menu">
         <p class="text__about">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
         <div class="gallery__about">
-          <img class="gallery__item" src="img/image1.png" alt="Image1">
-          <img class="gallery__item" src="img/image2.png" alt="Image2">
-          <img class="gallery__item" src="img/image3.png" alt="Image3">
+          <button class="gallery__btn left-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+            <path d="M15 7.5L9 12.5L15 17.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="gallery-box"><img class="gallery__item" src="img/image1.png" alt="Image1"></div>
+          <div class="gallery-box gallery_hide"><img class="gallery__item" src="img/image2.png" alt="Image2"></div>
+          <div class="gallery-box gallery_hide"><img class="gallery__item" src="img/image3.png" alt="Image3"></div>
+          <button class="gallery__btn right-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+            <path d="M9 17.5L15 12.5L9 7.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
         </div>
         <div class="pagination__wrapper">
           <div class="pagination__box"><button class="pagination__btn active"></button></div>
           <div class="pagination__box"><button class="pagination__btn"></button></div>
           <div class="pagination__box"><button class="pagination__btn"></button></div>
+          <div class="pagination__box"><button class="pagination__btn hide-btn"></button></div>
+          <div class="pagination__box"><button class="pagination__btn hide-btn"></button></div>
         </div>
       </section>
       <section class="favorites" id="favorites">
@@ -272,15 +291,15 @@
         <div class="contacts__info">
           <p class="contacts__info-heading">For all Library inquiries:</p>
           <ul class="contacts__list">
-            <li class="contacts__phone">Please call <a href="tel.6177302370" class="phone">(617) 730-2370</a></li>
-            <li class="contacts__phone">For TTY service, please call <a href="tel.6177302370" class="phone">(617) 730-2370</a></li>
-            <li class="contacts__phone">Putterham Library: <a href="tel.6177302385" class="phone">(617) 730-2385</a></li>
+            <li class="contacts__phone">Please call <a href="tel:6177302370" class="phone">(617) 730-2370</a></li>
+            <li class="contacts__phone">For TTY service, please call <a href="tel:6177302370" class="phone">(617) 730-2370</a></li>
+            <li class="contacts__phone">Putterham Library: <a href="tel:6177302385" class="phone">(617) 730-2385</a></li>
           </ul>
           <p class="contacts__info-main">Senior Staff</p>
           <p class="contacts__email">Library Director: <a href="mailto:AmandaHirst@gmail.com" class="email">Amanda Hirst</a></p>
         </div>
         <div class="contacts__map">
-          <img src="img/Map.png" alt="map">
+          <img class="map-img" src="img/Map.png" alt="map">
         </div>
        </div>
       </section>
