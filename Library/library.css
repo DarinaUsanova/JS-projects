@@ -750,3 +750,8 @@ h4{
     height: auto;
   }
 }
+@media (max-width: 692px) {
+  .footer__inner-bottom{
+    flex-direction: column;
+  }
+}
