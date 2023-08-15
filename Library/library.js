@@ -12,10 +12,33 @@ console.log(`
   const burgerItem = document.querySelector('.burger');
   const menu = document.querySelector('.menu');
   const menuCloseItem = document.querySelector('.nav__cross');
+  const menuItems = document.querySelectorAll('.nav__list');
+  
   burgerItem.addEventListener('click', () => {
-   menu.classList.add('menu_active');
+    menu.classList.add('menu_active');
   });
-  menuCloseItem.addEventListener('click', () =>{
+  
+  menuCloseItem.addEventListener('click', () => {
     menu.classList.remove('menu_active');
-  })
-}());
+  });
+  
+  menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+      menu.classList.remove('menu_active');
+    });
+  });
+  document.addEventListener('click', (event) => {
+    const targetElement = event.target;
+  
+    // Check if the target element is not inside the menu or burgerItem
+    if (!menu.contains(targetElement) && !burgerItem.contains(targetElement)) {
+      menu.classList.remove('menu_active');
+      document.removeEventListener('click', closeMenu);
+    }
+  });
+})();
+
+
+
+
+
