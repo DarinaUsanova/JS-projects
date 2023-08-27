@@ -37,6 +37,36 @@ console.log(`
     }
   });
 })();
+//dropmenu profile no auth
+(function () {
+  const userIcon = document.querySelector('.menu__icon');
+  const modalNoAuth = document.querySelector('.modal');
+
+  userIcon.addEventListener('click', toggleModal);
+
+  function toggleModal() {
+    modalNoAuth.classList.toggle('modal_active');
+    if (modalNoAuth.classList.contains('modal_active')) {
+      window.addEventListener('click', closeOnClickOutside);
+    } else {
+      window.removeEventListener('click', closeOnClickOutside);
+    }
+  }
+
+  function closeOnClickOutside(event) {
+    if (!userIcon.contains(event.target) && !modalNoAuth.contains(event.target)) {
+      modalNoAuth.classList.remove('modal_active');
+      window.removeEventListener('click', closeOnClickOutside);
+    }
+  }
+})();
+
+
+
+
+
+
+
 
 
 
