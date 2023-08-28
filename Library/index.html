@@ -42,8 +42,8 @@
               <div class="modal_content">
                 <h4 class="drop-menu">Profile</h4>
                 <hr class="line__menu-drop">
-                <button class="drop-menu_btn"><p class="text-drop top">Log In</p></button>
-                <button class="drop-menu_btn"><p class="text-drop">Register</p></button>
+                <button id="drop-menu_btn-Login" class="drop-menu_btn top">Log In</button>
+                <button id="drop-menu_btn-Register" class="drop-menu_btn">Register</button>
               </div>
             </div>
           </div>
@@ -362,6 +362,50 @@
       </div>
      </div>
     </footer>
+    <div id="modal_login" class="modal_login">
+      <div class="modal_box">
+        <button id="login_svg-close" class="login_svg"><svg class="svg-cross" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+          <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+          <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+        </svg></button>
+        <p class="section__label login-lable">Login</p>
+        <form class="login_form" action="#">
+          <span class="login_form-text">E-mail or readers card</span>
+          <input class="login_form-input" type="text">
+          <span class="login_form-text">Password</span>
+          <input class="login_form-input" type="password">
+          <button class="login_form-btn" type="submit">Log In</button>
+        </form>
+        <span class="login_form-decription">
+          Don’t have an account?
+          <button class="login_form-reg">Register</button>
+        </span>
+      </div>
+    </div>
+    <div id="modal_register" class="modal_register">
+      <div class="modal_box register">
+        <button id="login_svg-close-register" class="login_svg"><svg class="svg-cross" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+          <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+          <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+        </svg></button>
+        <p class="section__label register-lable">Register</p>
+        <form class="login_form" action="#">
+          <span class="login_form-text">First name</span>
+          <input class="login_form-input" type="text">
+          <span class="login_form-text">Last name</span>
+          <input class="login_form-input" type="text">
+          <span class="login_form-text">E-mail</span>
+          <input class="login_form-input" type="text">
+          <span class="login_form-text">Password</span>
+          <input class="login_form-input" type="password">
+          <button class="login_form-btn" type="submit">Sign Up</button>
+        </form>
+        <span class="login_form-decription">
+          Don’t have an account?
+          <button class="login_form-reg">Login</button>
+        </span>
+      </div>
+    </div>
   </div>
   <script src="./library.js"></script>
 </body>

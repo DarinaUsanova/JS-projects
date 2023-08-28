@@ -41,11 +41,17 @@ console.log(`
 (function () {
   const userIcon = document.querySelector('.menu__icon');
   const modalNoAuth = document.querySelector('.modal');
+  const modalLogin = document.getElementById('modal_login');
 
   userIcon.addEventListener('click', toggleModal);
 
   function toggleModal() {
-    modalNoAuth.classList.toggle('modal_active');
+    if (modalLogin.classList.contains('open')) {
+      modalNoAuth.classList.remove('modal_active');
+    } else {
+      modalNoAuth.classList.toggle('modal_active');
+    }
+
     if (modalNoAuth.classList.contains('modal_active')) {
       window.addEventListener('click', closeOnClickOutside);
     } else {
@@ -61,6 +67,59 @@ console.log(`
   }
 })();
 
+// Log-in modal window open 
+document.getElementById('drop-menu_btn-Login').addEventListener('click',function() {
+  document.getElementById('modal_login').classList.add('open');
+  // Close modal_active if open
+  document.querySelector('.modal.modal_active').classList.remove('modal_active');
+});
+
+// Log-in modal window close
+document.getElementById('login_svg-close').addEventListener('click',function() {
+  document.getElementById('modal_login').classList.remove('open');
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.getElementById('modal_login').classList.remove('open');
+  }
+});
+
+document.querySelector('#modal_login .modal_box').addEventListener('click', event => {
+  event.stopPropagation(); 
+});
+
+document.querySelector('#modal_login').addEventListener('click', event => {
+  if (event.target.id === 'modal_login') {
+    document.querySelector('#modal_login').classList.remove('open');
+  }
+});
+//Register modal winddow open
+document.getElementById('drop-menu_btn-Register').addEventListener('click',function() {
+  document.getElementById('modal_register').classList.add('open');
+  // Close modal_active if open
+  document.querySelector('.modal.modal_active').classList.remove('modal_active');
+});
+//Register modal window close
+document.getElementById('login_svg-close-register').addEventListener('click',function() {
+  document.getElementById('modal_register').classList.remove('open');
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.getElementById('modal_register').classList.remove('open');
+  }
+});
+
+document.querySelector('#modal_register .modal_box').addEventListener('click', event => {
+  event.stopPropagation(); 
+});
+
+document.querySelector('#modal_register').addEventListener('click', event => {
+  if (event.target.id === 'modal_register') {
+    document.querySelector('#modal_register').classList.remove('open');
+  }
+});
 
 
 
