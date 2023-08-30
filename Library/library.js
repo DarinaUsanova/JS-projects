@@ -70,9 +70,14 @@ console.log(`
 // Log-in modal window open 
 document.getElementById('drop-menu_btn-Login').addEventListener('click',function() {
   document.getElementById('modal_login').classList.add('open');
-  // Close modal_active if open
+// Close modal_active if open
   document.querySelector('.modal.modal_active').classList.remove('modal_active');
 });
+// Log-in modal window open - log-in btn
+document.getElementById('login-btn').addEventListener('click',function() {
+  document.getElementById('modal_login').classList.add('open');
+});
+//Lig-in modal window open on buy_btn IF user not loged in
 
 // Log-in modal window close
 document.getElementById('login_svg-close').addEventListener('click',function() {
@@ -94,11 +99,15 @@ document.querySelector('#modal_login').addEventListener('click', event => {
     document.querySelector('#modal_login').classList.remove('open');
   }
 });
-//Register modal winddow open
+//Register modal window open
 document.getElementById('drop-menu_btn-Register').addEventListener('click',function() {
   document.getElementById('modal_register').classList.add('open');
   // Close modal_active if open
   document.querySelector('.modal.modal_active').classList.remove('modal_active');
+});
+// Register modal window open - signe - up btn
+document.getElementById('signup-btn').addEventListener('click',function() {
+  document.getElementById('modal_register').classList.add('open');
 });
 //Register modal window close
 document.getElementById('login_svg-close-register').addEventListener('click',function() {

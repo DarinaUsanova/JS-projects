@@ -47,7 +47,6 @@
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </header>
@@ -138,7 +137,7 @@
             <p class="book__description">
               A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.
             </p>
-            <button class="btn__own" disabled>Own</button>
+            <button class="btn__buy">Buy</button>
             <img src="img/book4.png" alt="The Last Queen" class="book__cover">
           </div>
            <div class="section__spring">
@@ -332,8 +331,8 @@
           <div class="readercard">
             <h3 class="card__title-right">Get a reader card</h3>
             <p class="card__info">You will be able to see a reader card after logging into account or you can register a new account</p>
-            <button class="card__form-btn" type="submit">Sign Up</button>
-            <button class="card__form-btn" type="submit">Log in</button>
+            <button id="signup-btn" class="card__form-btn" type="submit">Sign Up</button>
+            <button id="login-btn" class="card__form-btn" type="submit">Log in</button>
           </div>
         </div>   
       </section>
@@ -404,6 +403,108 @@
           Don’t have an account?
           <button class="login_form-reg">Login</button>
         </span>
+      </div>
+    </div>
+    <div id="modal_profile" class="modal_profile">
+      <div class="modal_box profile">
+        <div class="modal_profile-left">
+          <span class="modal_profile-initials">JD</span>
+          <span class="modal_profile-name">Jonh Doe</span>
+        </div>
+        <div class="modal_profile-right">
+          <button id="login_svg-close-register" class="login_svg"><svg class="svg-cross" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+            <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+          </svg></button>
+          <h3 class="modal_profile-titile">My profile</h3>
+            <ul class="modal_profile-list">
+              <li class="modal_profile-item">
+                <span class="modal_profile-item-name">visits</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76143 15.5 5C15.5 2.23857 13.2614 0 10.5 0C7.73857 0 5.5 2.23857 5.5 5C5.5 7.76143 7.73857 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5H0.5C0.5 18.3478 1.55357 15.8043 3.42894 13.9289C5.30429 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
+                </svg>
+                <span class="modal_profile-count count-visit">23</span>
+              </li>
+              <li class="modal_profile-item">
+                <span class="modal_profile-item-name">bonuses</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <path d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
+                </svg>
+                <span class="modal_profile-count count-bonus">1240</span>
+              </li>
+              <li class="modal_profile-item">
+                <span class="modal_profile-item-name">books</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                  <rect width="20" height="21" fill="#BB945F"/>
+                  <rect x="2" width="1" height="19" fill="#826844"/>
+                  <rect x="1" width="1" height="21" fill="white"/>
+                </svg>
+                <span class="modal_profile-count count-books">2</span>
+              </li>
+            </ul>
+            <p class="modal_profile-subtitle">Rented books</p>
+            <ul class="modal_profile-rented">
+              <li class="modal_profile-rented-item">
+                <span class="rented-item_book">The Last Queen, Clive Irving</span>
+              </li>
+              <li class="modal_profile-rented-item">
+                <span class="rented-item_book">Dominicana, Angie Cruz</span>
+              </li>
+            </ul>
+            <span class="modal_profile-card-number">
+              Card number
+              <input class="modal_profile-number" id="modal_profile-number" type="text" value="F00234030" readonly>
+              <button class="modal_profile-number-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
+                  <rect x="2.46826" y="0.25" width="10.5917" height="9.5" rx="0.75" stroke="black" stroke-width="0.5"/>
+                  <rect x="0.25" y="2.25" width="10.5917" height="9.5" rx="0.75" fill="white" stroke="black" stroke-width="0.5"/>
+                </svg>
+              </button>
+            </span>
+        </div>
+      </div>
+    </div>
+    <div class="modal_buy-card">
+      <div class="modal_box buy-card">
+        <div class="buy-card-top">
+          <button id="login_svg-close-register" class="login_svg"><svg class="svg-cross" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+            <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+          </svg></button>
+          <h3 class="buy-card-title">Buy a library card</h3>
+        </div>
+        <div class="buy-card-bottom">
+          <div class="buy-card-left">
+            <form action="#" id="buy-card-info" class="buy-card-info">
+              <label for="" class="buy-card-label">
+                <span class="buy-card-description">Bank card number</span>
+                <input class="buy-card-card-number" type="text">
+              </label>
+              <label for="" class="buy-card-label">
+                <span class="buy-card-description">Expiration code</span>
+                <input class="buy-card-small-input" type="text">
+                <input class="buy-card-small-input" type="text">
+              </label>
+              <label for="" class="buy-card-label">
+                <span class="buy-card-descroption">CVC</span>
+                <input class="buy-card-small-input" type="text">
+              </label>
+              <label for="" class="buy-card-label">
+                <span class="buy-card-descroption">Cardholder name</span>
+                <input class="buy-card-cardholdder-name" type="text">
+              </label>
+              <label for="" class="buy-card-label">
+                <span class="buy-card-descroption">Postal code</span>
+                <input class="buy-card-index" type="text">
+              </label>
+              <label for="" class="buy-card-label">
+                <span class="buy-card-descroption">City / Town</span>
+                <input class="buy-card-town-info" type="text">
+              </label>
+            </form>
+          </div>
+          <div class="buy-card-right"></div>
+        </div>
       </div>
     </div>
   </div>
