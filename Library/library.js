@@ -129,6 +129,55 @@ document.querySelector('#modal_register').addEventListener('click', event => {
     document.querySelector('#modal_register').classList.remove('open');
   }
 });
+//Carousel
+const galleryBox = document.querySelector('.gallery-box');
+const galleryItems = document.querySelectorAll('.gallery__item');
+const leftBtn = document.querySelector('.left-btn');
+const rightBtn = document.querySelector('.right-btn');
+const paginationBtns = document.querySelectorAll('.pagination__btn');
+
+let currentIndex = 0;
+
+function showSlide(index) {
+  galleryItems.forEach(item => {
+    item.classList.remove('active');
+  });
+
+  galleryItems[index].classList.add('active');
+}
+
+function updatePagination(index) {
+  paginationBtns.forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  paginationBtns[index].classList.add('active');
+}
+
+leftBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+  showSlide(currentIndex);
+  updatePagination(currentIndex);
+});
+
+rightBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % galleryItems.length;
+  showSlide(currentIndex);
+  updatePagination(currentIndex);
+});
+
+paginationBtns.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    currentIndex = index;
+    showSlide(currentIndex);
+    updatePagination(currentIndex);
+  });
+});
+
+// Initial setup
+showSlide(currentIndex);
+updatePagination(currentIndex);
+
 
 
 

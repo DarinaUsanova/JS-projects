@@ -202,6 +202,7 @@ h2{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  overflow: hidden;
 }
 .gallery__item{
   max-width: 100%;
@@ -642,7 +643,7 @@ h4{
 .footer__info{
   text-align: end;
 }
-.modal_login, .modal_register, .modal_profile{
+.modal_login, .modal_register, .modal_profile, .modal_buy-card{
   position: fixed;
   left: 0;
   top: 0;
@@ -657,11 +658,11 @@ h4{
   opacity: 0;
   transition: opacity .4s, visibility .4s;
 }
-.modal_login.open, .modal_register.open, .modal_profile.open{
+.modal_login.open, .modal_register.open, .modal_profile.open, .modal_buy-card.open{
   visibility: visible;
   opacity: 1;
 }
-.modal_login.open .modal_box, .modal_register.open .modal_box, .modal_profile.open .modal_box{
+.modal_login.open .modal_box, .modal_register.open .modal_box, .modal_profile.open .modal_box, .modal_buy-card.open .modal_box{
   transform: scale(1);
 }
 .modal_box{
@@ -683,6 +684,12 @@ h4{
   max-width: 600px;
   min-height: 400px;
   flex-direction: row;
+  padding: 0;
+}
+.buy-card{
+  min-width: 650px;
+  min-height: 540px;
+  flex-direction: column;
   padding: 0;
 }
 .login_svg{
@@ -728,7 +735,7 @@ h4{
   font-weight: 700;
   letter-spacing: 1px;
   font-size: 10px;
-  padding: 9px 20px;
+  padding: 9px 15px;
   margin-top: 20px;
 }
 .login_form-btn:hover{
@@ -897,6 +904,92 @@ h4{
   cursor: pointer;
   border: none;
   background-color: transparent;
+}
+.buy-card-top{
+  background-color: #0C0C0E;
+  height: 60px;
+}
+.buy-btn{
+
+}
+.buy-card-title{
+  color: #FFF;
+  font-family: 'Forum', cursive;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px 0;
+}
+.buy-card-bottom{
+  display: flex;
+  flex-direction: row;
+  padding: 30px 40px 40px;
+}
+.buy-card-left{
+  margin-right: 40px;
+  text-align: start;
+}
+.buy-card-info{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.buy-card-label{
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 0.4s ease-in-out all;
+  gap: 10px;
+}
+.buy-card-description{
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+}
+.buy-card-input{
+  border: 1px solid #BB945F;
+  background-color: #FFF;
+  line-height: 20px;
+  width: 200px;
+}
+.cardholder{
+  margin-top: 10px;
+}
+.small-input-wraper{
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+.small-input{
+  width: 45px;
+}
+.buy-card-summ{
+  font-family: 'Inter', sans-serif;
+  color: #0C0C0E;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-left: 25px;
+}
+.buy-card-info{
+  text-align: start;
+}
+.buy-card-info-text{
+  min-width: 330px;
+  font-family: 'Inter', sans-serif;
+  color: #8E8E8E;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 2px;
 }
 @media (max-width: 1395px){
   .gallery__about{

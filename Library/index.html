@@ -72,6 +72,8 @@
           <div class="gallery-box"><img class="gallery__item" src="img/image1.png" alt="Image1"></div>
           <div class="gallery-box gallery_hide"><img class="gallery__item" src="img/image2.png" alt="Image2"></div>
           <div class="gallery-box gallery_hide"><img class="gallery__item" src="img/image3.png" alt="Image3"></div>
+          <div class="gallery-box gallery_hide"><img class="gallery__item" src="img/image4.png" alt="Image3"></div>
+          <div class="gallery-box gallery_hide"><img class="gallery__item" src="img/image5.png" alt="Image3"></div>
           <button class="gallery__btn right-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
             <path d="M9 17.5L15 12.5L9 7.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -464,46 +466,58 @@
         </div>
       </div>
     </div>
-    <div class="modal_buy-card">
+    <div class="modal_buy-card" id="modal_buy-card">
       <div class="modal_box buy-card">
         <div class="buy-card-top">
-          <button id="login_svg-close-register" class="login_svg"><svg class="svg-cross" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-            <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
-            <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+          <button id="login_svg-close-register" class="login_svg buy-btn"><svg class="svg-cross" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <path d="M2 16.8507L17 2" stroke="white" stroke-width="3"/>
+            <path d="M2 2.14929L17 17" stroke="white" stroke-width="3"/>
           </svg></button>
           <h3 class="buy-card-title">Buy a library card</h3>
         </div>
         <div class="buy-card-bottom">
           <div class="buy-card-left">
             <form action="#" id="buy-card-info" class="buy-card-info">
-              <label for="" class="buy-card-label">
+              <label for="buy-card-card-number" class="buy-card-label">
                 <span class="buy-card-description">Bank card number</span>
-                <input class="buy-card-card-number" type="text">
+                <input class="buy-card-input card-number" id="buy-card-card-number" type="text" pattern="[0-9]*" maxlength="16" required="Enter your card number">
               </label>
-              <label for="" class="buy-card-label">
+              <label for="exp-code" class="buy-card-label">
                 <span class="buy-card-description">Expiration code</span>
-                <input class="buy-card-small-input" type="text">
-                <input class="buy-card-small-input" type="text">
+                <div class="small-input-wraper">
+                  <input class="buy-card-input small-input" id="exp-code" type="text" pattern="[0-9]*" maxlength="2" required="Enter a code">
+                  <input class="buy-card-input small-input" id="exp-code" type="text" pattern="[0-9]*" maxlength="2" required="Enter a code">
+                </div>
               </label>
-              <label for="" class="buy-card-label">
+              <label for="cvc" class="buy-card-label">
                 <span class="buy-card-descroption">CVC</span>
-                <input class="buy-card-small-input" type="text">
+                <input class="buy-card-input small-input" id="cvc" type="text" pattern="[0-9]*" maxlength="3" required="Enter CVC">
               </label>
-              <label for="" class="buy-card-label">
+              <label for="buy-card-cardholdder-name" class="buy-card-label cardholder">
                 <span class="buy-card-descroption">Cardholder name</span>
-                <input class="buy-card-cardholdder-name" type="text">
+                <input class="buy-card-input cardholdder-name" id="buy-card-cardholdder-name" type="text" pattern="[a-zA-Zа-яА-Я]*" required="Enter your Name">
               </label>
-              <label for="" class="buy-card-label">
+              <label for="buy-card-index" class="buy-card-label">
                 <span class="buy-card-descroption">Postal code</span>
-                <input class="buy-card-index" type="text">
+                <input class="buy-card-input card-index" id="buy-card-index" type="text" pattern="[0-9]*" required="Enter postal code">
               </label>
-              <label for="" class="buy-card-label">
+              <label for="buy-card-town-info" class="buy-card-label">
                 <span class="buy-card-descroption">City / Town</span>
-                <input class="buy-card-town-info" type="text">
+                <input class="buy-card-input town-info" id="buy-card-town-info" type="text" pattern="[a-zA-Zа-яА-Я]*" required="Enter City">
               </label>
             </form>
+            <div class="buy-card-btn">
+              <button class="login_form-btn" type="submit">Buy</button>
+              <span class="buy-card-summ">$ 25.00</span>
+            </div>
           </div>
-          <div class="buy-card-right"></div>
+          <div class="buy-card-right">
+            <div class="buy-card-info">
+              <p class="buy-card-info-text">
+                If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
