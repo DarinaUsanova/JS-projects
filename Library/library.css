@@ -208,6 +208,7 @@ h2{
   max-width: 100%;
   height: auto;
 }
+
 .gallery__btn{
   display: none;
 }
@@ -991,6 +992,9 @@ h4{
   line-height: 20px;
   letter-spacing: 2px;
 }
+.gallery_hide{
+  display: none;
+}
 @media (max-width: 1395px){
   .gallery__about{
     gap: 10px;
@@ -999,9 +1003,6 @@ h4{
 @media (max-width: 1230px){
   .book__info{
     flex-direction: column;
-  }
-  .gallery_hide{
-    display: none;
   }
   .gallery__about{
     display: flex;

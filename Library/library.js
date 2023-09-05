@@ -129,63 +129,79 @@ document.querySelector('#modal_register').addEventListener('click', event => {
     document.querySelector('#modal_register').classList.remove('open');
   }
 });
-//Carousel
-const galleryBox = document.querySelector('.gallery-box');
-const galleryItems = document.querySelectorAll('.gallery__item');
-const leftBtn = document.querySelector('.left-btn');
-const rightBtn = document.querySelector('.right-btn');
-const paginationBtns = document.querySelectorAll('.pagination__btn');
 
+//Carousel
+//* Get references to DOM elements
+const galleryContainer = document.querySelector('.gallery__about');
+const galleryItems = galleryContainer.querySelectorAll('.gallery-box');
+const leftButton = galleryContainer.querySelector('.left-btn');
+const rightButton = galleryContainer.querySelector('.right-btn');
+const paginationButtons = document.querySelectorAll('.pagination__btn');
+
+let imagesAmount = 1;
 let currentIndex = 0;
 
-function showSlide(index) {
-  galleryItems.forEach(item => {
-    item.classList.remove('active');
-  });
-
-  galleryItems[index].classList.add('active');
+// Function to show a specific image based on the index
+function showImage(index) {
+    galleryItems.forEach((item, i) => {
+        const visibleIndexes = [index];
+        if (imagesAmount === 3) visibleIndexes.push(index + 1, index + 2);
+        if (visibleIndexes.includes(i)) {
+          item.classList.remove('gallery_hide');
+        } else {
+          item.classList.add('gallery_hide');
+        }
+    });
 }
 
+// Function to update the active pagination button
 function updatePagination(index) {
-  paginationBtns.forEach(btn => {
-    btn.classList.remove('active');
-  });
-
-  paginationBtns[index].classList.add('active');
+    paginationButtons.forEach((button, i) => {
+        button.classList.toggle('active', i === index);
+    });
 }
 
-leftBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-  showSlide(currentIndex);
+// Event listener for the left button
+leftButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        showImage(currentIndex);
+        updatePagination(currentIndex);
+    }
+});
+
+// Event listener for the right button
+rightButton.addEventListener('click', () => {
+    if (currentIndex < galleryItems.length - 1) {
+        currentIndex++;
+        showImage(currentIndex);
+        updatePagination(currentIndex);
+    }
+});
+
+// Event listeners for pagination buttons
+paginationButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        currentIndex = index;
+        showImage(currentIndex);
+        updatePagination(currentIndex);
+    });
+});
+
+
+function getImagesAmount() {
+  if (window.innerWidth < 1230) {
+    imagesAmount = 1;
+  } else {
+    imagesAmount = 3;
+  }
+  showImage(currentIndex);
   updatePagination(currentIndex);
-});
+}
 
-rightBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % galleryItems.length;
-  showSlide(currentIndex);
-  updatePagination(currentIndex);
-});
+window.addEventListener('resize', getImagesAmount);
 
-paginationBtns.forEach((btn, index) => {
-  btn.addEventListener('click', () => {
-    currentIndex = index;
-    showSlide(currentIndex);
-    updatePagination(currentIndex);
-  });
-});
-
-// Initial setup
-showSlide(currentIndex);
+getImagesAmount();
+// Initially, show the first image and set the first pagination button as active
+showImage(currentIndex);
 updatePagination(currentIndex);
-
-
-
-
-
-
-
-
-
-
-
-
