@@ -205,3 +205,35 @@ getImagesAmount();
 // Initially, show the first image and set the first pagination button as active
 showImage(currentIndex);
 updatePagination(currentIndex);
+
+//Favorites
+const radioButtons = document.querySelectorAll('input[type="radio"]');
+const favoritesSections = document.querySelectorAll('.favorites-item');
+
+// Function to show the selected set of favorite items without animation
+function showFavoritesSet(season) {
+    favoritesSections.forEach(section => {
+        if (section.classList.contains(`section__${season}`)) {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
+        }
+    });
+}
+
+// Event listener for radio buttons
+radioButtons.forEach(radio => {
+    radio.addEventListener('change', (event) => {
+        if (event.target.checked) {
+            const season = event.target.value;
+            showFavoritesSet(season);
+        }
+    });
+});
+
+// Initially, show the default set (e.g., Winter)
+showFavoritesSet('winter');
+
+
+
+
