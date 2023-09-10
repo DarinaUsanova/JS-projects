@@ -99,6 +99,16 @@ document.querySelector('#modal_login').addEventListener('click', event => {
     document.querySelector('#modal_login').classList.remove('open');
   }
 });
+// Register modal window open - Buy-btn
+const buttons = document.querySelectorAll('.btn__buy');
+const parent = document.querySelector('.book__info'); // Corrected selector
+
+parent.addEventListener('click', (event) => {
+  if (event.target instanceof HTMLButtonElement && event.target.classList.contains('btn__buy')) {
+    // Execute the desired code when a button with the class 'btn__buy' is clicked
+    document.querySelector('#modal_login').classList.add('open');
+  }
+});
 //Register modal window open
 document.getElementById('drop-menu_btn-Register').addEventListener('click',function() {
   document.getElementById('modal_register').classList.add('open');
