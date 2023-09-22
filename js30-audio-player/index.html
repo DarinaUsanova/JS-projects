@@ -25,17 +25,17 @@
           </button>
           <div class="dropdown-content" id="songList">
             <ul>
-              <li>Beyonce."Lemonade"</li>
-              <li>Dua Lipa."Dont start now"</li>
+              <li><a href="#" onclick="playSong(0)">Tame Impala."The Less I Know The Better"</a></li>
+              <li><a href="#" onclick="playSong(1)">Gorillaz."Empire Ants"</a></li>
             </ul>
           </div>
         </div>
       </nav>
-      <img src="./assets/lemonade.png" alt="Beyonce" class="cover">
-      <h1 class="title">Beyonce</h1>
-      <p class="name">Lemonade</p>
+      <img src="./assets/tame-impala.jpeg" alt="cover" class="cover">
+      <h1 class="title">Tame Impala </h1>
+      <p class="name">The Less I Know The Better</p>
       <audio id="song">
-        <source src="./assets/beyonce.mp3" type="audio/mpeg">
+        <source src="./assets/Tame Impala - The Less I Know The Better.mp3" type="audio/mpeg">
       </audio>
       <input type="range" value="0" id="progress">
       <input type="range" min="0" max="1" step="0.1" value="1" id="volume">
@@ -50,6 +50,16 @@
           <i class="fa-solid fa-forward" id="nextIcon"></i>
         </div>
       </div>
+      <footer>
+        <div class="wrapper">
+            <a class="github link" href="https://github.com/DarinaUsanova">
+              <img src="./assets/github.png" alt="GitHub Logo" width="25" height="20"></a>
+            <p>© 2023</p>
+            <a class="rsschool link" href="https://rs.school/js-stage0/">
+              <img src="./assets/rs_school_js.svg" alt="RSSchool Logo" width="40" height="20">
+            </a>
+        </div>
+      </footer>
     </div>
   </div>
   <script src="./index.js"></script>

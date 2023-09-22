@@ -5,16 +5,16 @@ let volumeInput = document.getElementById("volume");
 
 const songs = [
   {
-    title: "Beyonce",
-    name: "Lemonade",
-    source: "./assets/beyonce.mp3",
-    cover: "./assets/lemonade.png"
+    title: "Tame Impala ",
+    name: "The Less I Know The Better",
+    source: "./assets/Tame Impala - The Less I Know The Better.mp3",
+    cover: "./assets/tame-impala.jpeg"
   },
   {
-    title: "Dua Lipa",
-    name: "Dont start now",
-    source: "./assets/dontstartnow.mp3",
-    cover: "./assets/dontstartnow.png"
+    title: "Gorillaz",
+    name: "Empire Ants",
+    source: "./assets/Gorillaz - Empire Ants.mp3",
+    cover: "./assets/gorillaz.jpeg"
   }
 ];
 
@@ -111,6 +111,16 @@ progress.onchange = function(){
   song.currentTime = progress.value;
   ctrlIcon.classList.add("fa-pause");
   ctrlIcon.classList.remove("fa-play");
+}
+
+function playSong(index) {
+  if (index >= 0 && index < songs.length) {
+    currentSongIndex = index;
+    updateSongInfo();
+    song.play();
+    ctrlIcon.classList.add("fa-pause");
+    ctrlIcon.classList.remove("fa-play");
+  }
 }
 
 function updateSongInfo() {
