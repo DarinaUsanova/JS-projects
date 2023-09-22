@@ -17,8 +17,18 @@
         <div class="circle">
           <i class="fa-regular fa-heart"></i>
         </div>
-        <div class="circle">
-          <i class="fa-solid fa-bars"></i>
+        <div class="dropdown">
+          <button onclick="toggleSongList()" class="dropbtn">
+            <div class="circle">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+          </button>
+          <div class="dropdown-content" id="songList">
+            <ul>
+              <li>Beyonce."Lemonade"</li>
+              <li>Dua Lipa."Dont start now"</li>
+            </ul>
+          </div>
         </div>
       </nav>
       <img src="./assets/lemonade.png" alt="Beyonce" class="cover">
@@ -28,7 +38,7 @@
         <source src="./assets/beyonce.mp3" type="audio/mpeg">
       </audio>
       <input type="range" value="0" id="progress">
-      <input type="range" id="volume-progress" min="0" max="1" step="0.1" value="1" id="volume">
+      <input type="range" min="0" max="1" step="0.1" value="1" id="volume">
       <div class="controls">
         <div onclick="prevSong()">
           <i class="fa-solid fa-backward" id="prevIcon"></i>

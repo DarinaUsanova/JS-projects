@@ -1,6 +1,7 @@
 let progress = document.getElementById("progress");
 let song = document.getElementById("song");
 let ctrlIcon = document.getElementById("ctrlIcon");
+let volumeInput = document.getElementById("volume");
 
 const songs = [
   {
@@ -18,10 +19,52 @@ const songs = [
 ];
 
 let currentSongIndex = 0;
+song.volume = volumeInput.value;
 
 song.onloadedmetadata = function(){
   progress.max = song.duration;
   progress.value = song.currentTime;
+}
+
+volumeInput.addEventListener("input", function() {
+  song.volume = volumeInput.value;
+});
+
+function openSongList() {
+  let songList = document.getElementById("songList");
+  songList.style.display = "block";
+}
+
+function closeSongList() {
+  let songList = document.getElementById("songList");
+  songList.style.display = "none";
+}
+
+function toggleSongList() {
+  let songList = document.getElementById("songList");
+  if (songList.style.display === "block") {
+    closeSongList();
+  } else {
+    openSongList();
+  }
+}
+
+document.addEventListener("click", function(event) {
+  let songList = document.getElementById("songList");
+  let dropbtn = document.querySelector(".dropbtn");
+  if (event.target !== dropbtn && !dropbtn.contains(event.target)) {
+    closeSongList();
+  }
+});
+
+function toggleMute() {
+  if (song.valume === 0){
+    song.volume = volumeInput.value || 1;
+    volumeInput.value = song.volume;
+  } else {
+    song.volume = 0;
+    volumeInput.value = 0;
+  }
 }
 
 function playPause(){
