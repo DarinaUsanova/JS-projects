@@ -2,6 +2,8 @@ let progress = document.getElementById("progress");
 let song = document.getElementById("song");
 let ctrlIcon = document.getElementById("ctrlIcon");
 let volumeInput = document.getElementById("volume");
+let heartButton = document.getElementById("heartButton");
+let heartIcon = document.getElementById("heartIcon");
 
 const songs = [
   {
@@ -17,6 +19,21 @@ const songs = [
     cover: "./assets/gorillaz.jpeg"
   }
 ];
+
+let isHeartClicked = false;
+
+heartButton.addEventListener("click", function() {
+  isHeartClicked = !isHeartClicked;
+  if (isHeartClicked) {
+    heartIcon.classList.remove("fa-regular");
+    heartIcon.classList.add("fa-solid");
+    heartIcon.style.color = "#ff0000";
+  } else {
+    heartIcon.classList.remove("fa-solid");
+    heartIcon.classList.add("fa-regular");
+    heartIcon.style.color = "";
+  }
+});
 
 let currentSongIndex = 0;
 song.volume = volumeInput.value;
@@ -102,8 +119,12 @@ function prevSong() {
   ctrlIcon.classList.remove("fa-play");
 }
 
+let isProgressClicked = false;
+progress.onmousedown = () => (isProgressClicked = true);
+progress.onmouseup = () => (isProgressClicked = false);
+
 setInterval(() => {
-  progress.value = song.currentTime;
+  if (!isProgressClicked) progress.value = song.currentTime;
 }, 500);
 
 progress.onchange = function(){
@@ -130,3 +151,7 @@ function updateSongInfo() {
   document.querySelector(".name").textContent = songs[currentSongIndex].name;
 }
 updateSongInfo();
+
+song.addEventListener("ended", function() {
+  nextSong();
+});

@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audio Player</title>
   <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/be40a2c447.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 </head>
 <body>
   <div class="container">
     <div class="audio-player">
       <nav>
-        <div class="circle">
-          <i class="fa-regular fa-heart"></i>
-        </div>
+        <button id="heartButton">
+          <div class="circle">
+            <i class="fa-regular fa-heart" id="heartIcon"></i>
+          </div>
+        </button>
         <div class="dropdown">
           <button onclick="toggleSongList()" class="dropbtn">
             <div class="circle">
