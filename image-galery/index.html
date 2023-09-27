@@ -3,9 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image galery</title>
+  <title>Image gallery</title>
+  <link rel="stylesheet" href="./index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/be40a2c447.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  
+  <div class="container">
+   <header>
+      <div class="container-flex">
+        <div class="name-box">
+          <h1>
+            <i class="fa-regular fa-image"></i>
+            Image Gallery
+          </h1>
+        </div>
+        <div class="search-box">
+          <i id="search" class="fa-solid fa-xmark"></i>
+          <input id="input" type="text" placeholder="Search here">
+        </div>
+      </div>
+  </header>
+  <section class="gallery">
+    <ul class="images">
+      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+    </ul>
+    <button class="load">Load more</button>
+  </section>
+ </div>
+ <footer>
+  <div class="container-flex">
+      <a class="github link" href="https://github.com/DarinaUsanova">
+        <img src="./github.png" alt="GitHub Logo" width="45" height="40"></a>
+      <p>© 2023</p>
+      <a class="rsschool link" href="https://rs.school/js-stage0/">
+        <img src="./rs_school_js.svg" alt="RSSchool Logo" width="60" height="40">
+      </a>
+  </div>
+</footer>
+<script src="./index.js" defer></script>
 </body>
 </html>
