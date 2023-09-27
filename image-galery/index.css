@@ -9,13 +9,13 @@ h1{
   font-weight: 400;
 }
 .container{
-  background: #9D8189;
+  background: #ffe5d9;
   width: 100%;
   height: 100%;
 }
 .container-flex{
   padding: 10px 20px;
-  background: #fff;
+  background: #d8e2dc;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -33,18 +33,18 @@ h1{
 .search-box input{
   width: 335px;
   background-color: #f2f2f2;
-  border: 1px solid #685057;
+  border: 1px solid #9d8189;
   padding: 8px;
-  color: #685057;
+  color: #9d8189;
   transition: all .3s ease-in-out;
   border-radius: 25px;
 }
 input:focus{
-  border-color: #f53192; 
-  box-shadow: 0 5px 10px rgba(255, 26, 26, 0.22); 
+  border-color: #ffcad4; 
+  box-shadow: 0 10px 15px rgba(255, 12, 57, 0.22); 
   outline: none; 
 }
- #search{
+ #clear{
   position: absolute;
   cursor: pointer;
   top: 25%;
@@ -53,7 +53,7 @@ input:focus{
   background-color: transparent;
 }
 .search-box:hover{
-  color: #685057;
+  color: #9d8189;
 }
 .gallery{
   display: flex;
@@ -72,16 +72,32 @@ input:focus{
 .images .card{
   list-style: none;
   margin-bottom: 15px;
+  transition: transform 0.4s;
+}
+.images .card:hover{
+  transform: scale(1.1);
 }
 .gallery .load{
   margin: 25px 0;
   background-color: #f2f2f2;
-  border: 1px solid #685057;
+  border: 1px solid #9d8189;
   padding: 8px;
-  color: #685057;
+  color: #9d8189;
   transition: all .3s ease-in-out;
   border-radius: 25px;
   cursor: pointer;
+  transition: transform 0.4s;
+}
+.gallery .load:hover{
+  transform: scale(1.1);
+  border-color: #ffcad4; 
+  box-shadow: 0 10px 15px rgba(255, 12, 57, 0.22); 
+  outline: none;
+}
+.gallery .load:active{
+  transform: scale(1.3);
+  border-color: #ffcad4; 
+  box-shadow: 0 10px 15px rgba(255, 12, 57, 0.22); 
 }
 .wrapper{
   display: flex;
@@ -91,8 +107,20 @@ input:focus{
   margin-top: 20px;
 }
 .link{
-  transition: transform 0.4s;
+  transition: transform 0.4s ease-in-out;
 }
 .link:hover{
   transform: scale(1.3);
+}
+
+@media (max-width: 814px) {
+  .container-flex{
+    flex-direction: column;
+  }
+  .name-box{
+    margin-bottom: 20px;
+  }
+  .search-box{
+    margin-bottom: 15px;
+  }
 }

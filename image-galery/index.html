@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./index.css">
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/be40a2c447.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 </head>
 <body>
   <div class="container">
@@ -19,35 +20,35 @@
           </h1>
         </div>
         <div class="search-box">
-          <i id="search" class="fa-solid fa-xmark"></i>
-          <input id="input" type="text" placeholder="Search here">
+          <i id="clear" class="fa-solid fa-xmark"></i>
+          <input id="input" type="text" placeholder="Search here" autocomplete="off" autofocus>
         </div>
       </div>
   </header>
   <section class="gallery">
     <ul class="images">
-      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
-      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
-      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
-      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
-      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
-      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
-      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
-      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
-      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
-      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
-      <li class="card"><img src="./tame-impala.jpeg" alt=""></li>
+      <li class="card"><img class="image" src="https://images.unsplash.com/photo-1683533876788-5b7b1e165a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" alt="Image 1"></li>
+      <li class="card"><img class="image" src="https://images.unsplash.com/photo-1617200673057-ebbc4115e18d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" alt="Image 2"></li>
+      <li class="card"><img class="image" src="https://plus.unsplash.com/premium_photo-1694412515392-13aa33759854?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" alt="Image 3"></li>
+      <li class="card"><img class="image" src="https://images.unsplash.com/photo-1694433983802-8f3eb707c9e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" alt="Image 4"></li>
+      <li class="card"><img class="image" src="https://images.unsplash.com/photo-1695648259930-920a1b92bfed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" alt="Image 5"></li>
+      <li class="card"><img class="image" src="https://images.unsplash.com/photo-1695766612366-5c073898ad62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2454&q=80" alt="Image 6"></li>
+      <li class="card"><img class="image" src="https://images.unsplash.com/photo-1695582341851-8cc6eba24e1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" alt="Image 7"></li>
+      <li class="card"><img class="image" src="https://plus.unsplash.com/premium_photo-1675813861705-ad5679e4f2d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" alt="Image 8"></li>
+      <li class="card"><img class="image" src="https://images.unsplash.com/photo-1694128718125-9a7abedaf202?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" alt="Image 9"></li>
+      <li class="card"><img class="image" src="https://images.unsplash.com/photo-1695515115475-dc5495581ea8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2671&q=80" alt="Image 10"></li>
+      <li class="card"><img class="image" src="https://images.unsplash.com/photo-1695516609971-09957ab8462e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" alt="Image 11"></li>
     </ul>
-    <button class="load">Load more</button>
+    <button class="load" is="show-more">Load more</button>
   </section>
  </div>
  <footer>
   <div class="container-flex">
       <a class="github link" href="https://github.com/DarinaUsanova">
-        <img src="./github.png" alt="GitHub Logo" width="45" height="40"></a>
+        <img src="./assets/github.png" alt="GitHub Logo" width="45" height="40"></a>
       <p>© 2023</p>
       <a class="rsschool link" href="https://rs.school/js-stage0/">
-        <img src="./rs_school_js.svg" alt="RSSchool Logo" width="60" height="40">
+        <img src="./assets/rs_school_js.svg" alt="RSSchool Logo" width="60" height="40">
       </a>
   </div>
 </footer>
