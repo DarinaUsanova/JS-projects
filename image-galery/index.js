@@ -2,7 +2,7 @@
 const apiKey = "ycNYwED-TEPDyZ1i0Qo5ifozz934xyeOvhIEDeHDr9I";
 // Variables
 const textInput = document.getElementById("input");
-const clearInput = document.getElementById("clear");
+const clearButton = document.getElementById("clear");
 const searchResults = document.querySelector(".images");
 const showMore = document.getElementById("show-more");
 
@@ -56,50 +56,7 @@ showMore.addEventListener("click", () => {
   searchImages();
 });
 
-clearInput.addEventListener("click", function () {
+clearButton.addEventListener("click", function () {
   textInput.value = "";
+  page = 1;
 });
-
-
-
-
-
-
-
-
-
-
-
-
-/* Функция для загрузки изображений из API Flickr
-async function getImages(searchQuery) {
-  try {
-    // Формируем URL запроса к API Flickr
-    const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&extras=url_h&format=json&nojsoncallback=1&per_page=11&text=${searchQuery || 'all'}`;
-
-    // Отправляем GET-запрос к API
-    const response = await fetch(url);
-    const data = await response.json();
-
-    // Проверяем, есть ли изображения
-    if (data.photos && data.photos.photo.length > 0) {
-      // Обновляем изображения на странице с помощью URL-адресов, полученных из API
-      for (let i = 0; i < data.photos.photo.length; i++) {
-        arrImage[i].src = data.photos.photo[i].url_h;
-        arrImage[i].alt = `Image ${i + 1}`;
-      }
-    } else {
-      // Если изображения не найдены, выводим сообщение об ошибке
-      alert('Изображения не найдены.');
-    }
-  } catch (error) {
-    // В случае ошибки выводим сообщение об ошибке
-    console.error('Ошибка:', error);
-  }
-}
-// Обработчик события нажатия Enter в поле ввода
-textInput.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    searchImages();
-  }
-}); */
