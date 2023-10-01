@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "GnarlySkeleton";
+  src: url("font/GnarlySkeleton.otf");
+}
+body{
+  background: #E08C3E;
+}
+.wrapper{
+  box-sizing: border-box;
+  width: 26em;
+  padding: 2.5em 3em;
+  background-color: #fff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 10px;
+  box-shadow: 0 1em 3em rgba(86, 66, 0, 0.2);
+}
+.container{
+  position: relative;
+  width: 100%;
+  display: grid;
+}
