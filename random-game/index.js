@@ -6,6 +6,8 @@ const stopButton = document.getElementById("stop");
 const gameContainer = document.querySelector(".game-container");
 const result = document.getElementById("result");
 const controls = document.querySelector(".controls-container");
+const audio = new Audio('mp3/936854.mp3');
+const smallAudio = new Audio('mp3/witch.mp3');
 
 let cards;
 let interval;
@@ -36,6 +38,15 @@ let minutes = 0;
 let movesCount = 0;
 let winCount = 0;
 
+// Audio play on start
+document.addEventListener('DOMContentLoaded', function (){
+  function playAudio(){
+    audio.autoplay = true;
+    audio.loop = true;
+    audio.play();
+  }
+  startButton.addEventListener('click', playAudio);
+});
 // Timer
 const timeGenerator = () => {
   seconds += 1;
@@ -162,6 +173,8 @@ stopButton.addEventListener("click", () => {
   stopButton.classList.add("hide");
   startButton.classList.remove("hide");
   clearInterval(interval);
+  audio.pause();
+  smallAudio.play();
 });
 
 // Initialize values and func calls
