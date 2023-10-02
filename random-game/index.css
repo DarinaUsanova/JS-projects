@@ -8,17 +8,150 @@
   src: url("font/GnarlySkeleton.otf");
 }
 body{
-  background: #E08C3E;
+  background: #4B2206;
 }
 .wrapper{
   box-sizing: border-box;
   width: 43em;
-  padding: 2.5em 3em;
-  background-color: #fff;
+  padding: 0.5em 3em;
+  background-color: #E5A161;
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   border-radius: 10px;
   box-shadow: 0 1em 3em rgba(203, 74, 4, 0.862);
+}
+.game-container {
+  position: relative;
+  width: 100%;
+  display: grid;
+  gap: 0.6em;
+  justify-items: center;
+}
+.image{
+  width: 150px;
+  height: 130px;
+}
+.stats-container {
+  text-align: right;
+  margin-bottom: 1.2em;
+  color: #972D07;
+}
+span{
+  font-family: "GnarlySkeleton";
+  font-size: 20px;
+  margin-right: 5px;
+}
+.stats-container span {
+  font-weight: 600;
+}
+.card-container {
+  position: relative;
+  width: 8.25em;
+  height: 8.25em;
+  cursor: pointer;
+}
+.card-before,
+.card-after {
+  position: absolute;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #4B2206;
+  transition: transform 0.7s ease-out;
+  backface-visibility: hidden;
+}
+.card-before {
+  background-color: #D8572A;
+  font-size: 2.8em;
+  font-weight: 600;
+}
+.card-after {
+  background-color: #ffffff;
+  transform: rotateY(180deg);
+}
+.card-container.flipped .card-before {
+  transform: rotateY(180deg);
+}
+.card-container.flipped .card-after {
+  transform: rotateY(0deg);
+}
+.controls-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/background4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 0;
+}
+button {
+  border: none;
+  border-radius: 0.3em;
+  padding: 1em 1.5em;
+  cursor: pointer;
+}
+#stop {
+  font-family: "GnarlySkeleton";
+  font-size: 1.3em;
+  display: block;
+  margin: 1.1em auto 0 auto;
+  background-color: #F8C462;
+  box-shadow: 0 1em 3em rgba(254, 214, 12, 0.773);
+  color: #4B2206;
+  transition: all .3s ease-in-out;
+}
+#stop:hover{
+  transform: scale(1.3);
+}
+.controls-container button {
+  font-family: "GnarlySkeleton";
+  background: #F7B538;
+  font-size: 1.3em;
+  box-shadow: 0 1em 3em rgba(254, 214, 12, 0.773);
+  transition: all .3s ease-in-out;
+}
+.controls-container button:hover{
+  transform: scale(1.3);
+}
+.hide {
+  display: none;
+}
+#result {
+  text-align: center;
+}
+#result h2 {
+  font-family: "GnarlySkeleton";
+  color: #F7B538;
+  font-size: 5em;
+}
+#result h4 {
+  color: #F7B538;
+  font-size: 3em;
+  margin: 0.6em 0 1em 0;
+}
+.container-flex{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+}
+.container-flex a{
+  transition: all .3s ease-in-out;
+}
+.container-flex a:hover{
+  transform: scale(1.3);
+}
+p{
+  color: #4B2206;
 }
