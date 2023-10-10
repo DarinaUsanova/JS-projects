@@ -7,15 +7,22 @@ const gameContainer = document.querySelector(".game-container");
 const result = document.getElementById("result");
 const controls = document.querySelector(".controls-container");
 const audio = new Audio('mp3/936854.mp3');
-const smallAudio = new Audio('mp3/witch.mp3');
+const winAudio = new Audio('mp3/witch.mp3');
+const gameResults = JSON.parse(localStorage.getItem('gameResults')) || [];
+const recordButton = document.getElementById("record");
+const closeResultsButton = document.getElementById("close-results");
+const recordPopup = document.getElementById("record-popup");
+const table = document.getElementById("table");
+
 
 let cards;
 let interval;
 let firstCard = false;
 let secondCard = false;
 let firstCardValue;
+let delay;
 
-// Items array
+
 const items = [
   { name: "first", image: "img/first.jpeg" },
   { name: "second", image: "img/second.jpeg" },
@@ -47,6 +54,8 @@ document.addEventListener('DOMContentLoaded', function (){
   }
   startButton.addEventListener('click', playAudio);
 });
+
+// можно с одной переменной
 // Timer
 const timeGenerator = () => {
   seconds += 1;
@@ -57,13 +66,19 @@ const timeGenerator = () => {
   // time before displaying
   let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
   let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
-  timeValue.innerHTML = `<span>Time :</span>${minutesValue}:${secondsValue}`;
+  timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
 };
 
 // Calculating moves
 const movesCounter = () => {
   movesCount += 1;
   moves.innerHTML = `<span>Moves:</span>${movesCount}`;
+};
+
+// Save results for Local Storage
+const saveGameResults = (time, moves) => {
+  gameResults.push({time, moves});
+  localStorage.setItem('gameResults', JSON.stringify(gameResults));
 };
 
 // Pick random objects from the items array
@@ -99,55 +114,73 @@ const matrixGenerator = (cardValues, size = 4) => {
       </div>
     `;
   }
+
+  const isEqualCards = () => {
+    return firstCard.getAttribute("data-card-value") === secondCard.getAttribute("data-card-value")
+  }
+
+  const isEndOfTheGame = () => {
+    return winCount === Math.floor(cardValues.length / 2)
+  }
+
+  const showWinMessage = () => {
+    result.innerHTML = `<h2>You Won! Happy Halloween!</h2><h4>Moves : ${movesCount}</h4>`;
+  }
+
+  const resetCard = () => {
+    firstCard = null;
+    secondCard = null;
+  }
+  const clickHandler = (event) => {
+    const card = event.target.closest(".card-container");
+
+    // если карточка уже отыграна и найдена ее пара, то выходим из функции
+    if (card.classList.contains("matched")) return;
+    // если эта карточка уже перевернута, то тоже выходим из функции
+    if (card.classList.contains("flipped")) return;
+
+    card.classList.add("flipped");
+
+    if (!firstCard) {
+      firstCard = card;
+    } else {
+      movesCounter();
+      secondCard = card;
+      // если карточки равны
+      if (isEqualCards()) {
+        firstCard.classList.add("matched");
+        secondCard.classList.add("matched");
+        winCount += 1;
+
+        // если конец игры
+        if (isEndOfTheGame()) {
+          // отбражаем сообщение
+          showWinMessage();
+          record.style.display = "block";
+          // останавливем игру после setTimeout на 191 строке
+          setTimeout(stopGame, 1100);
+          saveGameResults(`${minutes}:${seconds}`, movesCount);
+        }
+
+        // обнуляем карточки
+        resetCard();
+      } else {
+        const [tempFirst, tempSecond] = [firstCard, secondCard];
+        resetCard();
+        setTimeout(() => {
+          tempFirst.classList.remove("flipped");
+          tempSecond.classList.remove("flipped");
+        }, 900);
+      }
+    }
+
+  }
   // Grid
   gameContainer.style.gridTemplateColumns = `repeat(${size}, auto)`;
   // Cards
   cards = document.querySelectorAll(".card-container");
   cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      // If selected card is not matched yet then only run (i.e already matched card when clicked would be ignored)
-      if (!card.classList.contains("matched")) {
-        // flip the clicked card
-        card.classList.add("flipped");
-        // if it is the first card (!firstCard since firstCard is initially false)
-        if (!firstCard) {
-          // so current card will become firstCard
-          firstCard = card;
-          // current card's value becomes firstCardValue
-          firstCardValue = card.getAttribute("data-card-value");
-        } else {
-          // increment moves since user selected second card
-          movesCounter();
-          // secondCard and value
-          secondCard = card;
-          let secondCardValue = card.getAttribute("data-card-value");
-          if (firstCardValue === secondCardValue) {
-            // if both cards match, add matched class so these cards would be ignored next time
-            firstCard.classList.add("matched");
-            secondCard.classList.add("matched");
-            // set firstCard to false since next card would be first now
-            firstCard = false;
-            // winCount increment as user found a correct match
-            winCount += 1;
-            // check if winCount == half of cardValues
-            if (winCount === Math.floor(cardValues.length / 2)) {
-              result.innerHTML = `<h2>You Won! Happy Helloween!</h2><h4>Moves : ${movesCount}</h4>`;
-              stopGame();
-            }
-          } else {
-            // if the cards don't match
-            // flip the cards back to normal
-            let [tempFirst, tempSecond] = [firstCard, secondCard];
-            firstCard = false;
-            secondCard = false;
-            let delay = setTimeout(() => {
-              tempFirst.classList.remove("flipped");
-              tempSecond.classList.remove("flipped");
-            }, 900);
-          }
-        }
-      }
-    });
+    card.addEventListener("click", clickHandler);
   });
 };
 
@@ -168,14 +201,49 @@ startButton.addEventListener("click", () => {
 });
 
 // Stop game
-stopButton.addEventListener("click", () => {
+stopButton.addEventListener("click", stopGame);
+
+function stopGame() {
   controls.classList.remove("hide");
   stopButton.classList.add("hide");
   startButton.classList.remove("hide");
   clearInterval(interval);
   audio.pause();
-  smallAudio.play();
+  winAudio.play();
+}
+
+//Fill table
+const fillResultsTable = () => {
+  const last10Results = gameResults.slice(-10);
+  const table = document.getElementById('table');
+  const tbody = table.querySelector('tbody');
+  tbody.innerHTML = '';
+
+  for (let i = 0; i < last10Results.length; i++) {
+    const result = last10Results[i];
+    const row = tbody.insertRow(i);
+    const numberCell = row.insertCell(0);
+    const timeCell = row.insertCell(1);
+    const movesCell = row.insertCell(2);
+
+    numberCell.textContent = i + 1;
+    timeCell.textContent = result.time;
+    movesCell.textContent = result.moves;
+  }
+};
+
+//Show pop-up table
+recordButton.addEventListener('click', () => {
+  table.style.display = "block";
+  closeResultsButton.style.display = "block";
+  recordButton.style.display = "none";
 });
+closeResultsButton.addEventListener('click', () =>{
+  table.style.display = "none";
+  closeResultsButton.style.display = "none";
+  recordButton.style.display = "block";
+});
+
 
 // Initialize values and func calls
 const initializer = () => {
@@ -183,8 +251,13 @@ const initializer = () => {
   winCount = 0;
   let cardValues = generateRandom();
   matrixGenerator(cardValues);
+
+  if (gameResults.length) {
+    recordButton.classList.remove('hide');
+  }
 };
 
-initializer();
 
+initializer();
+fillResultsTable();
 
